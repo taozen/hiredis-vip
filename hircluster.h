@@ -121,6 +121,7 @@ int redisClusterSetOptionRouteUseSlots(redisClusterContext *cc);
 int redisClusterSetOptionConnectTimeout(redisClusterContext *cc, const struct timeval tv);
 int redisClusterSetOptionTimeout(redisClusterContext *cc, const struct timeval tv);
 int redisClusterSetOptionMaxRedirect(redisClusterContext *cc,  int max_redirect_count);
+int redisClusterSetOptionAuth(redisClusterContext *cc,  const char *auth);
 
 int redisClusterConnect2(redisClusterContext *cc);
 

@@ -2534,6 +2534,16 @@ int redisClusterSetOptionMaxRedirect(redisClusterContext *cc, int max_redirect_c
     return REDIS_OK;
 }
 
+int redisClusterSetOptionAuth(redisClusterContext *cc,  const char *auth)
+{
+    if(cc == NULL || auth == NULL) {
+        return REDIS_ERR;
+    }
+
+    memcpy(cc->auth, auth, strlen(auth));
+    return REDIS_OK;
+}
+
 int redisClusterConnect2(redisClusterContext *cc)
 {
     
